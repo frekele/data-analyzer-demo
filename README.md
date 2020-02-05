@@ -5,3 +5,15 @@
 [![Build Status](https://travis-ci.org/frekele/data-analyzer-demo.svg?branch=master)](https://travis-ci.org/frekele/data-analyzer-demo)
 [![Coverage](https://codecov.io/gh/frekele/data-analyzer-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/frekele/data-analyzer-demo)
 
+
+- JDK8
+- Spring Boot 2.2.x
+- Lombok 1.18.x
+- Apache commons-io 2.6
+- Apache commons-lang3 3.9
+
+
+#### Build
+```
+./mvnw clean install
+```
