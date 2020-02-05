@@ -7,10 +7,10 @@
 
 
 - JDK8
-- Spring Boot 2.2.x
-- Lombok 1.18.x
-- Apache commons-io 2.6
-- Apache commons-lang3 3.9
+- Spring Boot: 2.2.x
+- Lombok: 1.18.x
+- Apache commons-io: 2.6
+- Apache commons-lang3: 3.9
 
 
 #### Build:
