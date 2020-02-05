@@ -1,7 +1,6 @@
 package org.frekele.demo.data.analyzer.service;
 
 import org.frekele.demo.data.analyzer.config.OutputFileConfig;
-import org.frekele.demo.data.analyzer.factory.CustomerFactory;
 import org.frekele.demo.data.analyzer.model.Sale;
 import org.frekele.demo.data.analyzer.model.Salesman;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,8 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 class OutputFileServiceImplTest extends BaseServiceTest {
