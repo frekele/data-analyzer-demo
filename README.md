@@ -12,11 +12,14 @@
 - Apache commons-io: 2.6
 - Apache commons-lang3: 3.9
 
-
 #### Build:
 ```
 ./mvnw clean install
 ```
+
+#### Create Directory structure:
+- ${HOMEPATH}/data/in
+- ${HOMEPATH}/data/out
 
 #### Run:
 ```
