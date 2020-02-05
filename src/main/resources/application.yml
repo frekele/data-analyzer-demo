@@ -1,0 +1,10 @@
+file:
+  data:
+    in:
+      path: /data/in
+      extension: dat
+      observer:
+        interval: 8000
+    out:
+      path: /data/out/
+      extension: .done.dat
