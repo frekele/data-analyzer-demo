@@ -1,0 +1,64 @@
+
+language: java
+jdk:
+  - openjdk8
+
+cache:
+  directories:
+    - ${HOME}/.m2
+
+
+before_install:
+  - ulimit -a && free -m
+  - chmod +x .travis/*
+  - echo ${GPG_PUBLIC_KEYS}  | base64 --decode > /tmp/frekele-pubkey.asc
+  - echo ${GPG_PRIVATE_KEYS} | base64 --decode > /tmp/frekele-privkey.asc
+  - echo ${GPG_OWNERTRUST}   | base64 --decode > /tmp/frekele-ownertrust.asc
+  #- gpg --keyserver pgp.mit.edu --recv-key ${FREKELE_GPGKEY}
+  - gpg --import /tmp/frekele-pubkey.asc
+  - gpg --import /tmp/frekele-privkey.asc
+  - gpg --import-ownertrust /tmp/frekele-ownertrust.asc
+
+install:
+
+before_script:
+
+script:
+  - ./mvnw --settings .travis/settings.xml install -Dgpg.skip=false -B -V
+  - ulimit -a && free -m
+
+before_cache:
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+after_failure:
+  - echo "FAILURE"
+  - ulimit -a
+  - free -m
+
+before_deploy:
+
+deploy:
+  -
+    provider: script
+    script:
+      - .travis/deploy.sh
+    skip_cleanup: true
+    on:
+      repo: frekele/cielo-lio-remote-client
+      branch: master
+      jdk: oraclejdk8
+  -
+    provider: script
+    script:
+      - .travis/deploy.sh
+    skip_cleanup: true
+    on:
+      repo: frekele/cielo-lio-remote-client
+      tags: true
+      jdk: oraclejdk8
+
+after_deploy:
+
+after_script:
